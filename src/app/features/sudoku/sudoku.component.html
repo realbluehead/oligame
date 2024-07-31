@@ -1,0 +1,43 @@
+<div class="sudoku-table">
+  <div class="sudoku-row" *ngFor="let i of [0, 1, 2, 3]">
+    <div class="sudoku-cell-container" *ngFor="let j of [0, 1, 2, 3]">
+      <div class="sudoku-cell">{{ result[i][j] }}</div>
+      <div
+        [ngClass]="{
+          'sudoku-cell-hconnector': isHoritzontallyConnected(i, j)
+        }"
+      ></div>
+      <div
+        class=""
+        [ngClass]="{
+          'sudoku-cell-vconnector': isVerticallyConnected(i, j)
+        }"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="sudoku-table">
+  <div class="sudoku-row" *ngFor="let i of [0, 1, 2, 3]">
+    <div class="sudoku-cell-container" *ngFor="let j of [0, 1, 2, 3]">
+      <div class="sudoku-cell">
+        <input
+          id="C_{{ i }}_{{ j }}"
+          type="text"
+          (change)="cellChanged(i, j, this)"
+        />
+      </div>
+      <div
+        [ngClass]="{
+          'sudoku-cell-hconnector': isHoritzontallyConnected(i, j)
+        }"
+      ></div>
+      <div
+        class=""
+        [ngClass]="{
+          'sudoku-cell-vconnector': isVerticallyConnected(i, j)
+        }"
+      ></div>
+    </div>
+  </div>
+</div>
+<button (click)="regenerate()">Regenerate</button>

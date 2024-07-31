@@ -1,0 +1,58 @@
+.sudoku-table {
+  display: grid;
+
+  grid-template-columns: 64px 64px 64px 64px 64px;
+  gap: 4px;
+}
+
+.sudoku-row {
+  display: grid;
+}
+.sudoku-cell-container {
+  display: grid;
+  grid-template-columns: 56px 8px;
+  height: 64px;
+}
+.sudoku-cell {
+  border: 1px solid black;
+  width: 14px;
+  height: 24px;
+  margin: 0 8px 0 8px;
+  text-align: center;
+  padding: 8px 16px;
+
+  & > input {
+    border: 0;
+    width: 12px;
+    height: 16px;
+    font-size: 16px;
+    padding: 2px;
+    left: -2px;
+    position: relative;
+    background-color: lightgrey;
+  }
+}
+
+.sudoku-cell-hconnector {
+  border-top: 2px solid;
+  top: 28px;
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 10px;
+}
+
+.sudoku-cell-vconnector {
+  border-left: 2px solid;
+  top: 0;
+  left: 32px;
+  display: block;
+  position: relative;
+  height: 22px;
+  width: 10px;
+}
+
+button {
+  margin-left: 8px;
+  font-size: large;
+}
