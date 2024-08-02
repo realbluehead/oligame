@@ -1,7 +1,10 @@
 {
   "name": "oligame",
   "version": "0.0.0",
+  "homepage": "https://realbluehead.github.io/oligame/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist/browser",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
